@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Himi.Pages.HomePage"
+    Shell.NavBarIsVisible="False">
+
+    <Grid Padding="16" RowDefinitions="Auto,Auto,*,Auto">
+
+        <!-- Header/banner (no background) -->
+        <Grid Grid.Row="0" ColumnDefinitions="*,Auto,8,Auto,8,Auto" RowDefinitions="Auto" ColumnSpacing="0">
+            <Label Text="Himi" FontSize="60" FontAttributes="Bold" VerticalOptions="Center" />
+
+            <Button Grid.Column="1"
+                    Text="☾"
+                    FontSize="18"
+                    WidthRequest="48"
+                    HeightRequest="48"
+                    CornerRadius="10"
+                    Command="{Binding ToggleThemeCommand}" />
+
+            <Button Grid.Column="3"
+                    Text="{Binding CurrentLanguageLabel}"
+                    FontAttributes="Bold"
+                    WidthRequest="60"
+                    HeightRequest="48"
+                    CornerRadius="10"
+                    FontSize="16"
+                    Command="{Binding CycleLanguageCommand}" />
+
+            <Button Grid.Column="5"
+                    x:Name="PhoneMenuButton"
+                    Text="☎"
+                    FontSize="18"
+                    WidthRequest="48"
+                    HeightRequest="48"
+                    CornerRadius="10"
+                    Clicked="OnPhoneMenuClicked" />
+        </Grid>
+
+        <!-- Description moved lower + slightly larger -->
+        <Label Grid.Row="1"
+               Margin="0,14,0,0"
+               Text="{Binding HomeDescription}"
+               FontSize="21"
+               TextColor="{StaticResource TextSecondary}"
+               Opacity="1" />
+
+        <!-- Center logo -->
+        <Grid Grid.Row="2">
+            <Image Source="plock_logo.png"
+                   WidthRequest="150"
+                   HeightRequest="150"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Aspect="AspectFit" />
+        </Grid>
+
+        <!-- Bottom buttons + future chat icon -->
+        <Grid Grid.Row="3"
+              RowDefinitions="Auto,Auto"
+              RowSpacing="12"
+              VerticalOptions="End"
+              Margin="0,0,0,24">
+
+            <!-- Placeholder for future LLM chat (top-right, above buttons) -->
+            <Button Grid.Row="0"
+                    Text="💬"
+                    FontSize="22"
+                    WidthRequest="58"
+                    HeightRequest="58"
+                    CornerRadius="29"
+                    BackgroundColor="{StaticResource Accent}"
+                    TextColor="{StaticResource AccentTextOn}"
+                    HorizontalOptions="End"
+                    Clicked="OnChatClicked" />
+
+            <!-- Buttons (as before: full width stack) -->
+            <VerticalStackLayout Grid.Row="1" Spacing="12">
+                <Button Text="{Binding HomeFirstSteps}"
+                        BackgroundColor="{StaticResource Accent}"
+                        TextColor="{StaticResource AccentTextOn}"
+                        CornerRadius="8"
+                        HeightRequest="72"
+                        FontSize="21"
+                        Clicked="OnFirstStepsClicked" />
+
+                <Button Text="{Binding HomeHandbook}"
+                        BackgroundColor="{StaticResource Accent}"
+                        TextColor="{StaticResource AccentTextOn}"
+                        CornerRadius="8"
+                        HeightRequest="72"
+                        FontSize="21"
+                        Clicked="OnHandbookClicked" />
+
+                <Button Text="{Binding HomeNews}"
+                        BackgroundColor="{StaticResource Accent}"
+                        TextColor="{StaticResource AccentTextOn}"
+                        CornerRadius="8"
+                        HeightRequest="72"
+                        FontSize="21"
+                        Clicked="OnNewsClicked" />
+
+                <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" />
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>
+

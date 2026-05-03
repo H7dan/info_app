@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Himi.Pages.FirstStepsPage"
+    Title="First steps">
+
+    <Grid Padding="16" RowDefinitions="Auto,*" RowSpacing="12">
+        <VerticalStackLayout Grid.Row="0" Spacing="4">
+            <Label Text="First steps" FontSize="24" FontAttributes="Bold" />
+            <Label Text="Choose a checklist to start." Opacity="0.8" />
+        </VerticalStackLayout>
+
+        <CollectionView Grid.Row="1"
+                        x:Name="ChecklistsView"
+                        ItemsSource="{Binding Checklists}"
+                        SelectionMode="Single"
+                        SelectionChanged="OnChecklistSelectionChanged">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="14" ColumnDefinitions="*,Auto" Margin="0,0,0,10"
+                          BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}">
+                        <Grid.Shadow>
+                            <Shadow Brush="#000000" Opacity="0.08" Radius="10" Offset="0,4" />
+                        </Grid.Shadow>
+
+                        <Label Grid.Column="0" Text="{Binding Title}" FontSize="18" FontAttributes="Bold" />
+                        <Label Grid.Column="1" Text="{Binding Meta}" Opacity="0.7" VerticalOptions="Center" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>
+

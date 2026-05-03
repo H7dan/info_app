@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Himi.Pages.HandbookPage"
+    Title="Handbook">
+
+    <Grid Padding="16" RowDefinitions="Auto,*" RowSpacing="12">
+        <VerticalStackLayout Grid.Row="0" Spacing="4">
+            <Label Text="Handbook" FontSize="24" FontAttributes="Bold" />
+            <Label Text="Choose a topic to open articles." Opacity="0.8" />
+        </VerticalStackLayout>
+
+        <CollectionView Grid.Row="1"
+                        x:Name="CategoriesView"
+                        ItemsSource="{Binding Categories}"
+                        SelectionMode="Single"
+                        SelectionChanged="OnCategorySelectionChanged">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="14" ColumnDefinitions="*,Auto" RowDefinitions="Auto" Margin="0,0,0,10"
+                          BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}">
+                        <Grid.Shadow>
+                            <Shadow Brush="#000000" Opacity="0.08" Radius="10" Offset="0,4" />
+                        </Grid.Shadow>
+
+                        <Label Grid.Column="0" Text="{Binding Title}" FontSize="18" FontAttributes="Bold" />
+                        <Label Grid.Column="1" Text="{Binding CountLabel}" Opacity="0.7" VerticalOptions="Center" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>
+

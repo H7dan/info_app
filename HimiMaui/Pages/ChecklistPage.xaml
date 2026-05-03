@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Himi.Pages.ChecklistPage"
+    Title="{Binding Title}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="16">
+            <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" />
+
+            <VerticalStackLayout
+                BindableLayout.ItemsSource="{Binding Sections}"
+                Spacing="16">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="{Binding Title}" FontSize="18" FontAttributes="Bold" />
+
+                            <VerticalStackLayout
+                                BindableLayout.ItemsSource="{Binding Items}"
+                                Spacing="6">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto" ColumnSpacing="12" Padding="10,6">
+                                            <CheckBox Grid.Column="0"
+                                                      IsChecked="{Binding IsDone, Mode=TwoWay}"
+                                                      VerticalOptions="Start" />
+
+                                            <VerticalStackLayout Grid.Column="1" Spacing="4">
+                                                <Label Text="{Binding Text}" LineBreakMode="WordWrap" />
+
+                                                <Button Text="Open details"
+                                                        FontSize="14"
+                                                        Padding="0"
+                                                        BackgroundColor="Transparent"
+                                                        TextColor="{StaticResource Accent}"
+                                                        HorizontalOptions="Start"
+                                                        IsVisible="{Binding LinksToArticleId, Converter={StaticResource NullToBoolConverter}}"
+                                                        CommandParameter="{Binding .}"
+                                                        Clicked="OnOpenArticleClicked" />
+                                            </VerticalStackLayout>
+                                        </Grid>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+

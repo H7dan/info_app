@@ -1,0 +1,661 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "0.1.0",
+  "generatedAtUtc": "2026-04-20T00:00:00Z",
+  "categories": [
+    { "id": "EmergencyNumbers", "title": "Emergency numbers", "sort": 5 },
+    { "id": "EmergencyAndHealth", "title": "Emergency & health", "sort": 10 },
+    { "id": "LegalizationAndDocuments", "title": "Documents & legalization", "sort": 20 },
+    { "id": "DoNotBreakRules", "title": "Do not break rules", "sort": 30 },
+    { "id": "DailyLife", "title": "Daily life", "sort": 40 },
+    { "id": "Transport", "title": "Transport", "sort": 50 },
+    { "id": "Driving", "title": "Driving", "sort": 60 },
+    { "id": "Housing", "title": "Housing", "sort": 70 },
+    { "id": "WorkAndMoney", "title": "Work & money", "sort": 80 },
+    { "id": "KidsAndEducation", "title": "Kids & education", "sort": 90 }
+  ],
+  "articles": [
+    {
+      "id": "emergency_numbers",
+      "lang": "ua",
+      "title": "Екстрені номери (Польща)",
+      "summary": "112 та інші служби, коли дзвонити і що сказати.",
+      "categoryId": "EmergencyNumbers",
+      "tags": [ "emergency", "phone", "112" ],
+      "bodyPath": "Content/articles/ua/emergency_numbers.md",
+      "relatedIds": [],
+      "sources": []
+    },
+    {
+      "id": "emergency_numbers",
+      "lang": "pl",
+      "title": "Numery alarmowe (Polska)",
+      "summary": "112 i inne służby: kiedy dzwonić i co powiedzieć.",
+      "categoryId": "EmergencyNumbers",
+      "tags": [ "emergency", "phone", "112" ],
+      "bodyPath": "Content/articles/pl/emergency_numbers.md",
+      "relatedIds": [],
+      "sources": []
+    },
+    {
+      "id": "emergency_numbers",
+      "lang": "ru",
+      "title": "Экстренные номера (Польша)",
+      "summary": "112 и другие службы: когда звонить и что сказать.",
+      "categoryId": "EmergencyNumbers",
+      "tags": [ "emergency", "phone", "112" ],
+      "bodyPath": "Content/articles/ru/emergency_numbers.md",
+      "relatedIds": [],
+      "sources": []
+    },
+    {
+      "id": "shops_sunday",
+      "lang": "ua",
+      "title": "Магазини у неділю",
+      "summary": "Чому багато магазинів закриті і що робити, якщо треба купити продукти.",
+      "categoryId": "DailyLife",
+      "tags": [ "shops", "sunday" ],
+      "bodyPath": "Content/articles/ua/shops_sunday.md",
+      "relatedIds": [],
+      "sources": []
+    },
+    {
+      "id": "shops_sunday",
+      "lang": "pl",
+      "title": "Sklepy w niedzielę",
+      "summary": "Dlaczego wiele sklepów jest zamkniętych i co zrobić, gdy musisz coś kupić.",
+      "categoryId": "DailyLife",
+      "tags": [ "shops", "sunday" ],
+      "bodyPath": "Content/articles/pl/shops_sunday.md",
+      "relatedIds": [],
+      "sources": []
+    },
+    {
+      "id": "shops_sunday",
+      "lang": "ru",
+      "title": "Магазины в воскресенье",
+      "summary": "Почему многие магазины закрыты и что делать, если нужно купить продукты.",
+      "categoryId": "DailyLife",
+      "tags": [ "shops", "sunday" ],
+      "bodyPath": "Content/articles/ru/shops_sunday.md",
+      "relatedIds": [],
+      "sources": []
+    },
+    {
+      "id": "medical_help_where_to_go",
+      "lang": "ua",
+      "title": "Медична допомога: куди звертатися",
+      "summary": "SOR, NPL, POZ: що обрати і коли викликати швидку.",
+      "categoryId": "EmergencyAndHealth",
+      "tags": [ "health", "medicine", "sor", "npl" ],
+      "bodyPath": "Content/articles/ua/medical_help_where_to_go.md",
+      "relatedIds": [ "emergency_numbers" ],
+      "sources": []
+    },
+    {
+      "id": "medical_help_where_to_go",
+      "lang": "pl",
+      "title": "Pomoc medyczna: gdzie iść",
+      "summary": "SOR, NPL, POZ: co wybrać i kiedy wezwać pogotowie.",
+      "categoryId": "EmergencyAndHealth",
+      "tags": [ "health", "medicine", "sor", "npl" ],
+      "bodyPath": "Content/articles/pl/medical_help_where_to_go.md",
+      "relatedIds": [ "emergency_numbers" ],
+      "sources": []
+    },
+    {
+      "id": "medical_help_where_to_go",
+      "lang": "ru",
+      "title": "Медицинская помощь: куда идти",
+      "summary": "SOR, NPL, POZ: что выбрать и когда вызывать скорую.",
+      "categoryId": "EmergencyAndHealth",
+      "tags": [ "health", "medicine", "sor", "npl" ],
+      "bodyPath": "Content/articles/ru/medical_help_where_to_go.md",
+      "relatedIds": [ "emergency_numbers" ],
+      "sources": []
+    },
+    {
+      "id": "pesel",
+      "lang": "ua",
+      "title": "PESEL: навіщо потрібен і як отримати",
+      "summary": "Що таке PESEL, де його роблять і які документи взяти.",
+      "categoryId": "LegalizationAndDocuments",
+      "tags": [ "pesel", "documents" ],
+      "bodyPath": "Content/articles/ua/pesel.md",
+      "relatedIds": [],
+      "sources": []
+    },
+    {
+      "id": "pesel",
+      "lang": "pl",
+      "title": "PESEL: do czego służy i jak uzyskać",
+      "summary": "Czym jest PESEL, gdzie go wyrobić i jakie dokumenty zabrać.",
+      "categoryId": "LegalizationAndDocuments",
+      "tags": [ "pesel", "documents" ],
+      "bodyPath": "Content/articles/pl/pesel.md",
+      "relatedIds": [],
+      "sources": []
+    },
+    {
+      "id": "pesel",
+      "lang": "ru",
+      "title": "PESEL: зачем нужен и как получить",
+      "summary": "Что такое PESEL, где его делают и какие документы взять.",
+      "categoryId": "LegalizationAndDocuments",
+      "tags": [ "pesel", "documents" ],
+      "bodyPath": "Content/articles/ru/pesel.md",
+      "relatedIds": [],
+      "sources": []
+    },
+    {
+      "id": "register_address",
+      "lang": "ua",
+      "title": "Реєстрація адреси (meldunek): коротко",
+      "summary": "Коли потрібен meldunek, що запитують і де оформити.",
+      "categoryId": "LegalizationAndDocuments",
+      "tags": [ "meldunek", "address", "documents" ],
+      "bodyPath": "Content/articles/ua/register_address.md",
+      "relatedIds": [ "pesel" ],
+      "sources": []
+    },
+    {
+      "id": "register_address",
+      "lang": "pl",
+      "title": "Meldunek: rejestracja adresu (krótko)",
+      "summary": "Kiedy meldunek jest potrzebny, gdzie go zrobić i co zabrać.",
+      "categoryId": "LegalizationAndDocuments",
+      "tags": [ "meldunek", "address", "documents" ],
+      "bodyPath": "Content/articles/pl/register_address.md",
+      "relatedIds": [ "pesel" ],
+      "sources": []
+    },
+    {
+      "id": "register_address",
+      "lang": "ru",
+      "title": "Регистрация адреса (meldunek): кратко",
+      "summary": "Когда нужен meldunek, где оформить и что взять с собой.",
+      "categoryId": "LegalizationAndDocuments",
+      "tags": [ "meldunek", "address", "documents" ],
+      "bodyPath": "Content/articles/ru/register_address.md",
+      "relatedIds": [ "pesel" ],
+      "sources": []
+    },
+    {
+      "id": "common_fines",
+      "lang": "ua",
+      "title": "Типові штрафи: що легко порушити",
+      "summary": "Дрібні речі, які часто «влітають у штраф»: транспорт, сміття, документи.",
+      "categoryId": "DoNotBreakRules",
+      "tags": [ "fine", "rules" ],
+      "bodyPath": "Content/articles/ua/common_fines.md",
+      "relatedIds": [],
+      "sources": []
+    },
+    {
+      "id": "common_fines",
+      "lang": "pl",
+      "title": "Typowe mandaty: co łatwo złamać",
+      "summary": "Drobiazgi, za które często są mandaty: transport, śmieci, dokumenty.",
+      "categoryId": "DoNotBreakRules",
+      "tags": [ "fine", "rules" ],
+      "bodyPath": "Content/articles/pl/common_fines.md",
+      "relatedIds": [],
+      "sources": []
+    },
+    {
+      "id": "common_fines",
+      "lang": "ru",
+      "title": "Типовые штрафы: что легко нарушить",
+      "summary": "Мелочи, за которые часто штрафуют: транспорт, мусор, документы.",
+      "categoryId": "DoNotBreakRules",
+      "tags": [ "fine", "rules" ],
+      "bodyPath": "Content/articles/ru/common_fines.md",
+      "relatedIds": [],
+      "sources": []
+    },
+    {
+      "id": "public_transport_tickets",
+      "lang": "ua",
+      "title": "Громадський транспорт: квитки і контролери",
+      "summary": "Де купити/активувати квиток і що робити під час перевірки.",
+      "categoryId": "Transport",
+      "tags": [ "transport", "ticket" ],
+      "bodyPath": "Content/articles/ua/public_transport_tickets.md",
+      "relatedIds": [ "common_fines" ],
+      "sources": []
+    },
+    {
+      "id": "public_transport_tickets",
+      "lang": "pl",
+      "title": "Transport publiczny: bilety i kontrola",
+      "summary": "Gdzie kupić/aktywować bilet i co zrobić podczas kontroli.",
+      "categoryId": "Transport",
+      "tags": [ "transport", "ticket" ],
+      "bodyPath": "Content/articles/pl/public_transport_tickets.md",
+      "relatedIds": [ "common_fines" ],
+      "sources": []
+    },
+    {
+      "id": "public_transport_tickets",
+      "lang": "ru",
+      "title": "Общественный транспорт: билеты и контролёры",
+      "summary": "Где купить/активировать билет и что делать при проверке.",
+      "categoryId": "Transport",
+      "tags": [ "transport", "ticket" ],
+      "bodyPath": "Content/articles/ru/public_transport_tickets.md",
+      "relatedIds": [ "common_fines" ],
+      "sources": []
+    },
+    {
+      "id": "drivers_license_exchange",
+      "lang": "ua",
+      "title": "Водійські права: обмін і базові правила",
+      "summary": "Коли треба міняти права і які документи зазвичай потрібні.",
+      "categoryId": "Driving",
+      "tags": [ "driving", "license" ],
+      "bodyPath": "Content/articles/ua/drivers_license_exchange.md",
+      "relatedIds": [],
+      "sources": []
+    },
+    {
+      "id": "drivers_license_exchange",
+      "lang": "pl",
+      "title": "Prawo jazdy: wymiana i podstawy",
+      "summary": "Kiedy trzeba wymienić prawo jazdy i jakie dokumenty są potrzebne.",
+      "categoryId": "Driving",
+      "tags": [ "driving", "license" ],
+      "bodyPath": "Content/articles/pl/drivers_license_exchange.md",
+      "relatedIds": [],
+      "sources": []
+    },
+    {
+      "id": "drivers_license_exchange",
+      "lang": "ru",
+      "title": "Водительские права: обмен и базовые правила",
+      "summary": "Когда нужно менять права и какие документы обычно нужны.",
+      "categoryId": "Driving",
+      "tags": [ "driving", "license" ],
+      "bodyPath": "Content/articles/ru/drivers_license_exchange.md",
+      "relatedIds": [],
+      "sources": []
+    },
+    {
+      "id": "rent_basics",
+      "lang": "ua",
+      "title": "Оренда житла: основи безпечної угоди",
+      "summary": "На що дивитися в договорі, депозит, оплати та лічильники.",
+      "categoryId": "Housing",
+      "tags": [ "housing", "rent" ],
+      "bodyPath": "Content/articles/ua/rent_basics.md",
+      "relatedIds": [],
+      "sources": []
+    },
+    {
+      "id": "rent_basics",
+      "lang": "pl",
+      "title": "Wynajem mieszkania: bezpieczna umowa (podstawy)",
+      "summary": "Na co zwrócić uwagę w umowie, kaucja, opłaty i liczniki.",
+      "categoryId": "Housing",
+      "tags": [ "housing", "rent" ],
+      "bodyPath": "Content/articles/pl/rent_basics.md",
+      "relatedIds": [],
+      "sources": []
+    },
+    {
+      "id": "rent_basics",
+      "lang": "ru",
+      "title": "Аренда жилья: основы безопасной сделки",
+      "summary": "На что смотреть в договоре, депозит, оплаты и счётчики.",
+      "categoryId": "Housing",
+      "tags": [ "housing", "rent" ],
+      "bodyPath": "Content/articles/ru/rent_basics.md",
+      "relatedIds": [],
+      "sources": []
+    }
+  ],
+  "checklists": [
+    {
+      "id": "day1",
+      "lang": "ua",
+      "title": "Перший день у Польщі",
+      "sections": [
+        {
+          "id": "basics",
+          "title": "Базові речі",
+          "items": [
+            { "id": "sim", "text": "Купи SIM-карту або підключи eSIM.", "linksToArticleId": null },
+            { "id": "emergency", "text": "Збережи екстрені номери в телефон.", "linksToArticleId": "emergency_numbers" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week1",
+      "lang": "ua",
+      "title": "Перший тиждень (переселенцю)",
+      "sections": [
+        {
+          "id": "docs",
+          "title": "Документи",
+          "items": [
+            {
+              "id": "pesel_30d",
+              "text": "До 30 днів: подай на PESEL. Де: Urząd Miasta/Urząd Gminy (адміністрація міста/гміни).",
+              "linksToArticleId": "pesel"
+            },
+            {
+              "id": "meldunek_if_needed",
+              "text": "Якщо потрібно: уточни про meldunek (реєстрацію адреси) і чи може власник житла підтвердити адресу.",
+              "linksToArticleId": "register_address"
+            }
+          ]
+        },
+        {
+          "id": "health",
+          "title": "Здоров'я",
+          "items": [
+            {
+              "id": "know_where_to_go",
+              "text": "Збережи собі “куди звертатись по меддопомогу” (SOR/NPL/POZ), щоб не губитися вночі/у вихідні.",
+              "linksToArticleId": "medical_help_where_to_go"
+            }
+          ]
+        },
+        {
+          "id": "daily",
+          "title": "Побут",
+          "items": [
+            {
+              "id": "tickets_rules",
+              "text": "Розберись з квитками в транспорті (де купити/активувати), щоб не зловити штраф.",
+              "linksToArticleId": "public_transport_tickets"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "month1",
+      "lang": "ua",
+      "title": "Перший місяць (переселенцю)",
+      "sections": [
+        {
+          "id": "housing",
+          "title": "Житло",
+          "items": [
+            {
+              "id": "rent_safely",
+              "text": "Перевір договір оренди: що входить в оплату, депозит, показники лічильників. Зроби фото при заселенні.",
+              "linksToArticleId": "rent_basics"
+            }
+          ]
+        },
+        {
+          "id": "rules",
+          "title": "Правила",
+          "items": [
+            {
+              "id": "avoid_fines",
+              "text": "Переглянь типові штрафи (транспорт/сміття/дрібниці) — це економить нерви і гроші.",
+              "linksToArticleId": "common_fines"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "day1",
+      "lang": "pl",
+      "title": "Pierwszy dzień w Polsce",
+      "sections": [
+        {
+          "id": "basics",
+          "title": "Podstawy",
+          "items": [
+            { "id": "sim", "text": "Kup kartę SIM lub eSIM.", "linksToArticleId": null },
+            { "id": "emergency", "text": "Zapisz numery alarmowe w telefonie.", "linksToArticleId": "emergency_numbers" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week1",
+      "lang": "pl",
+      "title": "Pierwszy tydzień (dla przesiedleńca)",
+      "sections": [
+        {
+          "id": "docs",
+          "title": "Dokumenty",
+          "items": [
+            {
+              "id": "pesel_30d",
+              "text": "Do 30 dni: złóż wniosek o PESEL. Gdzie: Urząd Miasta/Urząd Gminy.",
+              "linksToArticleId": "pesel"
+            },
+            {
+              "id": "meldunek_if_needed",
+              "text": "Jeśli potrzebne: zapytaj o meldunek i czy właściciel może potwierdzić adres.",
+              "linksToArticleId": "register_address"
+            }
+          ]
+        },
+        {
+          "id": "health",
+          "title": "Zdrowie",
+          "items": [
+            {
+              "id": "know_where_to_go",
+              "text": "Zapisz sobie, gdzie szukać pomocy medycznej (SOR/NPL/POZ), żeby nie błądzić w nocy lub w weekend.",
+              "linksToArticleId": "medical_help_where_to_go"
+            }
+          ]
+        },
+        {
+          "id": "daily",
+          "title": "Codzienne życie",
+          "items": [
+            {
+              "id": "tickets_rules",
+              "text": "Ogarnij bilety w transporcie (zakup/aktywacja), żeby uniknąć mandatu.",
+              "linksToArticleId": "public_transport_tickets"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "month1",
+      "lang": "pl",
+      "title": "Pierwszy miesiąc (dla przesiedleńca)",
+      "sections": [
+        {
+          "id": "housing",
+          "title": "Mieszkanie",
+          "items": [
+            {
+              "id": "rent_safely",
+              "text": "Sprawdź umowę najmu: opłaty, kaucja, liczniki. Zrób zdjęcia przy wprowadzaniu.",
+              "linksToArticleId": "rent_basics"
+            }
+          ]
+        },
+        {
+          "id": "rules",
+          "title": "Zasady",
+          "items": [
+            {
+              "id": "avoid_fines",
+              "text": "Przejrzyj typowe mandaty (transport/śmieci/drobiazgi) — to oszczędza nerwy i pieniądze.",
+              "linksToArticleId": "common_fines"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "day1",
+      "lang": "ru",
+      "title": "Первый день в Польше",
+      "sections": [
+        {
+          "id": "basics",
+          "title": "База",
+          "items": [
+            { "id": "sim", "text": "Купи SIM-карту или подключи eSIM.", "linksToArticleId": null },
+            { "id": "emergency", "text": "Сохрани экстренные номера в телефоне.", "linksToArticleId": "emergency_numbers" }
+          ]
+        }
+      ]
+    }
+    ,
+    {
+      "id": "week1",
+      "lang": "ru",
+      "title": "Первая неделя (переселенцу)",
+      "sections": [
+        {
+          "id": "docs",
+          "title": "Документы",
+          "items": [
+            {
+              "id": "pesel_30d",
+              "text": "До 30 дней: подай на PESEL. Где: Urząd Miasta/Urząd Gminy (администрация города/гмины).",
+              "linksToArticleId": "pesel"
+            },
+            {
+              "id": "meldunek_if_needed",
+              "text": "Если нужно: уточни про meldunek (регистрацию адреса) и сможет ли владелец жилья подтвердить адрес.",
+              "linksToArticleId": "register_address"
+            }
+          ]
+        },
+        {
+          "id": "health",
+          "title": "Здоровье",
+          "items": [
+            {
+              "id": "know_where_to_go",
+              "text": "Сохрани себе “куда идти за медпомощью” (SOR/NPL/POZ), чтобы не теряться ночью/в выходные.",
+              "linksToArticleId": "medical_help_where_to_go"
+            }
+          ]
+        },
+        {
+          "id": "daily",
+          "title": "Быт",
+          "items": [
+            {
+              "id": "tickets_rules",
+              "text": "Разберись с билетами в транспорте (где купить/активировать), чтобы не получить штраф.",
+              "linksToArticleId": "public_transport_tickets"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "month1",
+      "lang": "ru",
+      "title": "Первый месяц (переселенцу)",
+      "sections": [
+        {
+          "id": "housing",
+          "title": "Жильё",
+          "items": [
+            {
+              "id": "rent_safely",
+              "text": "Проверь договор аренды: что входит в оплату, депозит, счётчики. Сделай фото при заселении.",
+              "linksToArticleId": "rent_basics"
+            }
+          ]
+        },
+        {
+          "id": "rules",
+          "title": "Правила",
+          "items": [
+            {
+              "id": "avoid_fines",
+              "text": "Просмотри типовые штрафы (транспорт/мусор/мелочи) — это экономит нервы и деньги.",
+              "linksToArticleId": "common_fines"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "emergency_999",
+      "lang": "ua",
+      "title": "Швидка медична допомога",
+      "number": "999",
+      "category": "Emergency",
+      "note": "Невідкладна медична допомога."
+    },
+    {
+      "id": "emergency_998",
+      "lang": "ua",
+      "title": "Пожежна служба",
+      "number": "998",
+      "category": "Emergency",
+      "note": "Пожежа, ДТП, небезпечні ситуації."
+    },
+    {
+      "id": "emergency_997",
+      "lang": "ua",
+      "title": "Поліція",
+      "number": "997",
+      "category": "Emergency",
+      "note": "Небезпека, злочин, загроза."
+    },
+    {
+      "id": "emergency_999",
+      "lang": "pl",
+      "title": "Pogotowie ratunkowe",
+      "number": "999",
+      "category": "Emergency",
+      "note": "Nagła pomoc medyczna."
+    },
+    {
+      "id": "emergency_998",
+      "lang": "pl",
+      "title": "Straż pożarna",
+      "number": "998",
+      "category": "Emergency",
+      "note": "Pożar, wypadek, sytuacje niebezpieczne."
+    },
+    {
+      "id": "emergency_997",
+      "lang": "pl",
+      "title": "Policja",
+      "number": "997",
+      "category": "Emergency",
+      "note": "Zagrożenie, przestępstwo, bezpieczeństwo."
+    },
+    {
+      "id": "emergency_999",
+      "lang": "ru",
+      "title": "Скорая помощь",
+      "number": "999",
+      "category": "Emergency",
+      "note": "Неотложная медицинская помощь."
+    },
+    {
+      "id": "emergency_998",
+      "lang": "ru",
+      "title": "Пожарная служба",
+      "number": "998",
+      "category": "Emergency",
+      "note": "Пожар, ДТП, опасные ситуации."
+    },
+    {
+      "id": "emergency_997",
+      "lang": "ru",
+      "title": "Полиция",
+      "number": "997",
+      "category": "Emergency",
+      "note": "Опасность, преступление, угроза."
+    }
+  ]
+}
+

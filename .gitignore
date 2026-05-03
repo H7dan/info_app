@@ -1,0 +1,30 @@
+# .NET / Visual Studio
+**/bin/
+**/obj/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / JetBrains
+.idea/
+*.iml
+
+# OS junk
+Thumbs.db
+Desktop.ini
+
+# Build outputs / packages
+*.apk
+*.aab
+*.appx
+*.msix
+
+# Android signing keys (never commit)
+*.jks
+*.keystore
+
+# Local tooling / temp artifacts (this repo)
+.tmp_docx/
+.tmp_docx_src.zip
