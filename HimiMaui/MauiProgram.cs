@@ -29,6 +29,19 @@ public static class MauiProgram
 		builder.Services.AddSingleton<IUiStringsService, UiStringsService>();
 		builder.Services.AddSingleton<IMarkdownRenderer, MarkdownRenderer>();
 		builder.Services.AddSingleton<IChecklistProgressStore, ChecklistProgressStore>();
+		builder.Services.AddSingleton<INewsStore, NewsStore>();
+		builder.Services.AddSingleton(sp =>
+		{
+			var http = new HttpClient
+			{
+				Timeout = TimeSpan.FromSeconds(25)
+			};
+			http.DefaultRequestHeaders.UserAgent.ParseAdd("HimiMaui/1.0 (+offline-first)");
+			return http;
+		});
+		builder.Services.AddSingleton<INewsSource, GovPlUaNewsSource>();
+		builder.Services.AddSingleton<INewsSource, GovPlUdscNewsSource>();
+		builder.Services.AddSingleton<INewsService, NewsService>();
 		builder.Services.AddSingleton<AppShell>();
 
 		builder.Services.AddTransient<HomeViewModel>();
@@ -37,6 +50,7 @@ public static class MauiProgram
 		builder.Services.AddTransient<ArticleViewModel>();
 		builder.Services.AddTransient<FirstStepsViewModel>();
 		builder.Services.AddTransient<ChecklistViewModel>();
+		builder.Services.AddTransient<NewsViewModel>();
 
 		return builder.Build();
 	}

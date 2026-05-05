@@ -36,10 +36,39 @@ public sealed class ContentRepository : IContentRepository
 
 	public async Task<string> GetArticleMarkdownAsync(string bodyPath, CancellationToken cancellationToken = default)
 	{
+		if (string.IsNullOrWhiteSpace(bodyPath))
+			return string.Empty;
+
+		if (TryResolveAppDataPath(bodyPath, out var filePath))
+			return await File.ReadAllTextAsync(filePath, cancellationToken);
+
 		// `bodyPath` is a logical path inside the app package, e.g. "Content/articles/ua/emergency_numbers.md".
 		await using var stream = await FileSystem.OpenAppPackageFileAsync(bodyPath);
 		using var reader = new StreamReader(stream);
 		return await reader.ReadToEndAsync(cancellationToken);
+	}
+
+	private static bool TryResolveAppDataPath(string bodyPath, out string filePath)
+	{
+		filePath = string.Empty;
+
+		const string prefix = "appdata:";
+		if (bodyPath.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
+		{
+			var rel = bodyPath[prefix.Length..].TrimStart('/', '\\');
+			filePath = Path.Combine(FileSystem.AppDataDirectory, rel.Replace('/', Path.DirectorySeparatorChar));
+			return true;
+		}
+
+		// Convenience: allow relative "News/..." to mean appdata storage.
+		if (bodyPath.StartsWith("News/", StringComparison.OrdinalIgnoreCase) || bodyPath.StartsWith("News\\", StringComparison.OrdinalIgnoreCase))
+		{
+			var rel = bodyPath.TrimStart('/', '\\');
+			filePath = Path.Combine(FileSystem.AppDataDirectory, rel.Replace('/', Path.DirectorySeparatorChar));
+			return true;
+		}
+
+		return false;
 	}
 }
 

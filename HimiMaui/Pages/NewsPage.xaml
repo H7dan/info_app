@@ -5,9 +5,46 @@
     x:Class="Himi.Pages.NewsPage"
     Title="News">
 
-    <VerticalStackLayout Padding="16" Spacing="10">
-        <Label Text="News" FontSize="24" FontAttributes="Bold" />
-        <Label Text="MVP: local/offline news feed (later: sources + push)." Opacity="0.8" />
-    </VerticalStackLayout>
+    <Grid Padding="16" RowDefinitions="Auto,Auto,*" RowSpacing="12">
+        <Grid Grid.Row="0" ColumnDefinitions="*,Auto" ColumnSpacing="10">
+            <SearchBar Placeholder="Search by title"
+                       Text="{Binding Query}" />
+            <Button Grid.Column="1"
+                    Text="↻"
+                    WidthRequest="48"
+                    HeightRequest="48"
+                    CornerRadius="10"
+                    Command="{Binding RefreshCommand}" />
+        </Grid>
+
+        <ActivityIndicator Grid.Row="1"
+                           IsRunning="{Binding IsLoading}"
+                           IsVisible="{Binding IsLoading}" />
+
+        <CollectionView Grid.Row="2"
+                        ItemsSource="{Binding Items}"
+                        SelectionMode="Single"
+                        SelectionChanged="OnSelectionChanged">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Padding="12" StrokeShape="RoundRectangle 10" Margin="0,0,0,10">
+                        <VerticalStackLayout Spacing="6">
+                            <Label Text="{Binding Title}"
+                                   FontSize="18"
+                                   FontAttributes="Bold" />
+                            <Label Text="{Binding PublishedLabel}"
+                                   Opacity="0.7"
+                                   FontSize="12" />
+                            <Label Text="{Binding Intro}"
+                                   Opacity="0.85"
+                                   FontSize="13"
+                                   LineBreakMode="TailTruncation"
+                                   MaxLines="3" />
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
 </ContentPage>
 
