@@ -21,6 +21,7 @@ public sealed class NewsListItemVm
 public sealed class NewsViewModel : INotifyPropertyChanged
 {
 	private readonly INewsService _news;
+	private readonly IUiStringsService _strings;
 
 	private bool _isLoading;
 	private string _query = string.Empty;
@@ -55,10 +56,21 @@ public sealed class NewsViewModel : INotifyPropertyChanged
 
 	public ICommand RefreshCommand { get; }
 
-	public NewsViewModel(INewsService news)
+	public string PageTitle => _strings.NewsPageTitle;
+
+	public string SearchPlaceholder => _strings.NewsSearchPlaceholder;
+
+	public NewsViewModel(INewsService news, IUiStringsService strings)
 	{
 		_news = news;
+		_strings = strings;
 		RefreshCommand = new Command(async () => await RefreshAsync());
+
+		_strings.PropertyChanged += (_, _) =>
+		{
+			OnPropertyChanged(nameof(PageTitle));
+			OnPropertyChanged(nameof(SearchPlaceholder));
+		};
 	}
 
 	public async Task LoadCachedAsync()

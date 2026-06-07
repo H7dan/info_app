@@ -1,5 +1,4 @@
 using System.ComponentModel;
-using System.Globalization;
 
 namespace Himi.Services;
 
@@ -44,11 +43,8 @@ public sealed class LanguageService : ILanguageService
 		CurrentLanguage = languageCode;
 		Preferences.Set(PreferenceKey, languageCode);
 
-		// We keep this simple for MVP: update global cultures and let pages refresh themselves.
-		// "ua" is not a valid BCP-47 language tag; map to Ukrainian culture.
-		var culture = new CultureInfo(languageCode == "ua" ? "uk-UA" : languageCode);
-		CultureInfo.DefaultThreadCurrentCulture = culture;
-		CultureInfo.DefaultThreadCurrentUICulture = culture;
+		// UI strings are resolved via IUiStringsService; do not set thread culture here —
+		// on Android it can force the soft keyboard language and block typing in other languages.
 
 		PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CurrentLanguage)));
 	}

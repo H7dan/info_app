@@ -53,6 +53,7 @@ public sealed class HomeViewModel : INotifyPropertyChanged
 	public string Cancel => _strings.Cancel;
 	public string Ok => _strings.Ok;
 	public string Error => _strings.Error;
+	public string AiStubMode => _strings.AiStubMode;
 
 	public HomeViewModel(
 		IContentRepository contentRepository,
@@ -90,8 +91,11 @@ public sealed class HomeViewModel : INotifyPropertyChanged
 				OnPropertyChanged(nameof(Cancel));
 				OnPropertyChanged(nameof(Ok));
 				OnPropertyChanged(nameof(Error));
+				OnPropertyChanged(nameof(AiStubMode));
 			}
 		};
+
+		_strings.PropertyChanged += (_, _) => OnPropertyChanged(nameof(AiStubMode));
 	}
 
 	public async Task LoadAsync()

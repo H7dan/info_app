@@ -1,10 +1,12 @@
 using Himi.ViewModels;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Himi.Pages;
 
 public partial class HomePage : ContentPage
 {
 	private readonly HomeViewModel _vm;
+	private bool _suppressStubToggle;
 
 	public HomePage()
 	{
@@ -17,6 +19,14 @@ public partial class HomePage : ContentPage
 	{
 		base.OnAppearing();
 		await _vm.LoadAsync();
+
+		var settings = App.Services.GetRequiredService<Services.IAiSettingsService>();
+		if (FindByName("StubSwitch") is Switch stubSwitch)
+		{
+			_suppressStubToggle = true;
+			stubSwitch.IsToggled = settings.StubMode;
+			_suppressStubToggle = false;
+		}
 	}
 
 	private async void OnPhoneMenuClicked(object? sender, EventArgs e)
@@ -87,7 +97,16 @@ public partial class HomePage : ContentPage
 
 	private async void OnChatClicked(object? sender, EventArgs e)
 	{
-		await DisplayAlertAsync("Chat", "Coming soon.", "OK");
+		await Shell.Current.GoToAsync("Chat");
+	}
+
+	private void OnStubToggled(object? sender, ToggledEventArgs e)
+	{
+		if (_suppressStubToggle)
+			return;
+
+		var settings = App.Services.GetRequiredService<Services.IAiSettingsService>();
+		settings.SetStubMode(e.Value);
 	}
 }
 

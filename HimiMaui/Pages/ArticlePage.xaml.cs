@@ -4,12 +4,14 @@ namespace Himi.Pages;
 
 [QueryProperty(nameof(TitleParam), "title")]
 [QueryProperty(nameof(BodyPath), "bodyPath")]
+[QueryProperty(nameof(ArticleIdParam), "articleId")]
 public partial class ArticlePage : ContentPage
 {
 	private readonly ViewModels.ArticleViewModel _vm;
 
 	public string? TitleParam { get; set; }
 	public string? BodyPath { get; set; }
+	public string? ArticleIdParam { get; set; }
 
 	public ArticlePage()
 	{
@@ -21,7 +23,7 @@ public partial class ArticlePage : ContentPage
 	protected override async void OnAppearing()
 	{
 		base.OnAppearing();
-		await _vm.LoadAsync(TitleParam, BodyPath);
+		await _vm.LoadAsync(TitleParam, BodyPath, ArticleIdParam);
 	}
 }
 

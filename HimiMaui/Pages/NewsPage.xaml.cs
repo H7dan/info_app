@@ -29,7 +29,7 @@ public partial class NewsPage : ContentPage
 			cv.SelectedItem = null;
 
 		await Shell.Current.GoToAsync(
-			$"Article?title={Uri.EscapeDataString(item.Title)}&bodyPath={Uri.EscapeDataString(item.BodyPath)}");
+			$"Article?title={Uri.EscapeDataString(item.Title)}&bodyPath={Uri.EscapeDataString(item.BodyPath)}&articleId={Uri.EscapeDataString(item.Id)}");
 	}
 }
 

@@ -7,8 +7,9 @@
 
     <Grid Padding="16" RowDefinitions="Auto,*" RowSpacing="12">
         <SearchBar Grid.Row="0"
-                   Placeholder="Search"
-                   Text="{Binding SearchText}" />
+                   Placeholder="{Binding SearchPlaceholder}"
+                   Text="{Binding SearchText, Mode=TwoWay}"
+                   Keyboard="Text" />
 
         <CollectionView Grid.Row="1"
                         x:Name="ArticlesView"

@@ -15,6 +15,25 @@ public interface IUiStringsService : INotifyPropertyChanged
 	string Ok { get; }
 
 	string Error { get; }
+	string NoInternet { get; }
+
+	string TranslateArticle { get; }
+	string AskAboutArticle { get; }
+	string ViewOriginal { get; }
+	string ViewTranslation { get; }
+
+	string ChatTitle { get; }
+	string ChatInputPlaceholder { get; }
+	string ChatSend { get; }
+	string ChatDisclaimer { get; }
+	string AiStubMode { get; }
+
+	string NewsPageTitle { get; }
+	string NewsSearchPlaceholder { get; }
+	string ConnectionFailed { get; }
+	string ServerError { get; }
+	string ArticleContextMissing { get; }
+	string HandbookSearchPlaceholder { get; }
 }
 
 public sealed class UiStringsService : IUiStringsService
@@ -54,6 +73,56 @@ public sealed class UiStringsService : IUiStringsService
 	public string Ok => "OK";
 
 	public string Error => L("Помилка", "Błąd", "Ошибка");
+
+	public string NoInternet => L(
+		"Немає інтернету. Увімкніть stub-режим або підключення.",
+		"Brak internetu. Włącz tryb stub lub połączenie.",
+		"Нет интернета. Включите stub-режим или подключение."
+	);
+
+	public string TranslateArticle => L("Перекласти", "Przetłumacz", "Перевести");
+	public string AskAboutArticle => L("Запитати", "Zapytaj", "Спросить");
+	public string ViewOriginal => L("Оригінал", "Oryginał", "Оригинал");
+	public string ViewTranslation => L("Переклад", "Tłumaczenie", "Перевод");
+
+	public string ChatTitle => L("Чат", "Czat", "Чат");
+	public string ChatInputPlaceholder => L("Повідомлення…", "Wiadomość…", "Сообщение…");
+	public string ChatSend => L("Надіслати", "Wyślij", "Отправить");
+	public string ChatDisclaimer => L(
+		"AI не замінює юридичну консультацію.",
+		"AI nie zastępuje porady prawnej.",
+		"AI не заменяет юридическую консультацию."
+	);
+
+	public string AiStubMode => L("Заглушка AI", "AI (test)", "Заглушка AI");
+
+	public string NewsPageTitle => HomeNews;
+
+	public string NewsSearchPlaceholder => L(
+		"Пошук за заголовком",
+		"Szukaj po tytule",
+		"Поиск по заголовку"
+	);
+
+	public string HandbookSearchPlaceholder => L("Пошук", "Szukaj", "Поиск");
+
+	public string ConnectionFailed => L(
+		"Немає з'єднання з AI-сервером. Перевірте Docker і що stub вимкнено.",
+		"Brak połączenia z serwerem AI. Sprawdź Docker i wyłącz tryb testowy.",
+		"Нет соединения с AI-сервером. Проверьте Docker и что заглушка выключена."
+	);
+
+	public string ServerError => L(
+		"Помилка AI-сервера. Спробуйте ще раз або перевірте логи Docker.",
+		"Błąd serwera AI. Spróbuj ponownie lub sprawdź logi Dockera.",
+		"Ошибка AI-сервера. Попробуйте снова или проверьте логи Docker."
+	);
+
+	public string ArticleContextMissing => L(
+		"Текст статті не завантажено. Відкрийте новину знову.",
+		"Nie udało się wczytać treści artykułu. Otwórz wiadomość ponownie.",
+		"Текст статьи не загружен. Откройте новость снова."
+	);
 
 	private string L(string uk, string pl, string ru) => _language.CurrentLanguage switch
 	{

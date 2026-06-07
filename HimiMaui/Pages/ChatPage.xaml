@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Himi.Pages.ChatPage"
+    Title="{Binding ChatTitle}">
+
+    <Grid RowDefinitions="Auto,*,Auto,Auto,Auto" Padding="12" RowSpacing="8">
+        <Label Grid.Row="0"
+               Text="{Binding ArticleFootnote}"
+               IsVisible="{Binding HasArticleContext}"
+               FontSize="12"
+               TextColor="{StaticResource TextSecondary}" />
+
+        <CollectionView Grid.Row="1"
+                        ItemsSource="{Binding Messages}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Padding="10"
+                            Margin="0,0,0,8"
+                            StrokeShape="RoundRectangle 8">
+                        <Label Text="{Binding DisplayText}" />
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <ActivityIndicator Grid.Row="2"
+                           IsRunning="{Binding IsBusy}"
+                           IsVisible="{Binding IsBusy}" />
+
+        <Grid Grid.Row="3" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
+            <Entry Grid.Column="0"
+                   x:Name="ChatInput"
+                   Text="{Binding Input, Mode=TwoWay}"
+                   Placeholder="{Binding InputPlaceholder}"
+                   Keyboard="Text"
+                   ReturnType="Send"
+                   Completed="OnChatInputCompleted" />
+            <Button Grid.Column="1"
+                    Text="{Binding SendLabel}"
+                    Command="{Binding SendCommand}"
+                    IsEnabled="{Binding CanSend}" />
+            <Button Grid.Column="2"
+                    Text="■"
+                    FontSize="16"
+                    WidthRequest="44"
+                    HeightRequest="44"
+                    Padding="0"
+                    Command="{Binding CancelCommand}"
+                    IsVisible="{Binding CanCancel}"
+                    SemanticProperties.Description="{Binding CancelLabel}" />
+        </Grid>
+
+        <Label Grid.Row="4"
+               Text="{Binding Disclaimer}"
+               FontSize="11"
+               TextColor="{StaticResource TextSecondary}"
+               HorizontalTextAlignment="Center" />
+    </Grid>
+</ContentPage>

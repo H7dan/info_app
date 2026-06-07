@@ -42,6 +42,18 @@ public static class MauiProgram
 		builder.Services.AddSingleton<INewsSource, GovPlUaNewsSource>();
 		builder.Services.AddSingleton<INewsSource, GovPlUdscNewsSource>();
 		builder.Services.AddSingleton<INewsService, NewsService>();
+		builder.Services.AddSingleton<IAiSettingsService, AiSettingsService>();
+		builder.Services.AddSingleton<IChatHistoryStore, ChatHistoryStore>();
+		builder.Services.AddSingleton<IAssistantService>(sp =>
+		{
+			var http = CreateAiHttpClient();
+			return new AssistantService(http, sp.GetRequiredService<IAiSettingsService>());
+		});
+		builder.Services.AddSingleton<ITranslationService>(sp =>
+		{
+			var http = CreateAiHttpClient();
+			return new TranslationService(http, sp.GetRequiredService<IAiSettingsService>());
+		});
 		builder.Services.AddSingleton<AppShell>();
 
 		builder.Services.AddTransient<HomeViewModel>();
@@ -51,7 +63,15 @@ public static class MauiProgram
 		builder.Services.AddTransient<FirstStepsViewModel>();
 		builder.Services.AddTransient<ChecklistViewModel>();
 		builder.Services.AddTransient<NewsViewModel>();
+		builder.Services.AddTransient<ChatViewModel>();
 
 		return builder.Build();
+	}
+
+	private static HttpClient CreateAiHttpClient()
+	{
+		var http = new HttpClient { Timeout = TimeSpan.FromSeconds(300) };
+		http.DefaultRequestHeaders.UserAgent.ParseAdd("HimiMaui/1.0 (+ai-client)");
+		return http;
 	}
 }

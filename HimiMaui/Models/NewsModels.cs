@@ -6,6 +6,11 @@ public sealed record NewsIndex(
 	[property: JsonPropertyName("schemaVersion")] int SchemaVersion,
 	[property: JsonPropertyName("items")] IReadOnlyList<NewsItem> Items);
 
+public sealed record NewsTranslation(
+	[property: JsonPropertyName("lang")] string Lang,
+	[property: JsonPropertyName("bodyPath")] string BodyPath,
+	[property: JsonPropertyName("title")] string? Title);
+
 public sealed record NewsItem(
 	[property: JsonPropertyName("id")] string Id,
 	[property: JsonPropertyName("sourceId")] string SourceId,
@@ -13,5 +18,6 @@ public sealed record NewsItem(
 	[property: JsonPropertyName("publishedUtc")] DateTime PublishedUtc,
 	[property: JsonPropertyName("url")] string Url,
 	[property: JsonPropertyName("intro")] string? Intro,
-	[property: JsonPropertyName("bodyPath")] string BodyPath);
+	[property: JsonPropertyName("bodyPath")] string BodyPath,
+	[property: JsonPropertyName("translations")] IReadOnlyList<NewsTranslation>? Translations = null);
 

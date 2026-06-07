@@ -1,4 +1,4 @@
-# .NET / Visual Studio
+﻿# .NET / Visual Studio
 **/bin/
 **/obj/
 .vs/
@@ -28,3 +28,15 @@ Desktop.ini
 # Local tooling / temp artifacts (this repo)
 .tmp_docx/
 .tmp_docx_src.zip
+
+# Local learning notes (keep on this machine)
+HimiMaui/_learning/
+
+# Cursor IDE config (local)
+.cursor/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/

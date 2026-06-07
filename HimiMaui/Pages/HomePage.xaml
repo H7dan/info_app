@@ -63,17 +63,28 @@
               VerticalOptions="End"
               Margin="0,0,0,24">
 
-            <!-- Placeholder for future LLM chat (top-right, above buttons) -->
-            <Button Grid.Row="0"
-                    Text="💬"
-                    FontSize="22"
-                    WidthRequest="58"
-                    HeightRequest="58"
-                    CornerRadius="29"
-                    BackgroundColor="{StaticResource Accent}"
-                    TextColor="{StaticResource AccentTextOn}"
-                    HorizontalOptions="End"
-                    Clicked="OnChatClicked" />
+            <Grid Grid.Row="0" ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                <HorizontalStackLayout Grid.Column="0"
+                                       Spacing="6"
+                                       VerticalOptions="Center">
+                    <Label Text="{Binding AiStubMode}"
+                           FontSize="12"
+                           TextColor="{StaticResource TextSecondary}"
+                           VerticalOptions="Center" />
+                    <Switch x:Name="StubSwitch" Toggled="OnStubToggled" />
+                </HorizontalStackLayout>
+
+                <Button Grid.Column="1"
+                        Text="💬"
+                        FontSize="22"
+                        WidthRequest="58"
+                        HeightRequest="58"
+                        CornerRadius="29"
+                        BackgroundColor="{StaticResource Accent}"
+                        TextColor="{StaticResource AccentTextOn}"
+                        HorizontalOptions="End"
+                        Clicked="OnChatClicked" />
+            </Grid>
 
             <!-- Buttons (as before: full width stack) -->
             <VerticalStackLayout Grid.Row="1" Spacing="12">

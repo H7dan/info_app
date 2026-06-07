@@ -6,7 +6,7 @@ param(
   [string] $IndexPath = "HimiMaui/Content/index.json",
 
   [Parameter(Mandatory = $false)]
-  [string[]] $Languages = @("uk", "pl", "ru"),
+  [string[]] $Languages = @("ua", "pl", "ru"),
 
   [Parameter(Mandatory = $false)]
   [switch] $AllowMissingTranslations

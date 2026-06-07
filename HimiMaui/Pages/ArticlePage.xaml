@@ -5,8 +5,29 @@
     x:Class="Himi.Pages.ArticlePage"
     Title="{Binding Title}">
 
-    <Grid>
-        <WebView Source="{Binding HtmlSource}" />
+    <Grid RowDefinitions="Auto,*">
+        <VerticalStackLayout Grid.Row="0"
+                             Padding="12,8"
+                             Spacing="8"
+                             IsVisible="{Binding ShowNewsActions}">
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
+                <Button Grid.Column="0"
+                        Text="{Binding TranslateLabel}"
+                        Command="{Binding TranslateCommand}"
+                        IsEnabled="{Binding CanTranslate}" />
+                <Button Grid.Column="1"
+                        Text="{Binding AskQuestionLabel}"
+                        Command="{Binding AskQuestionCommand}"
+                        IsEnabled="{Binding CanAsk}" />
+            </Grid>
+
+            <Button Text="{Binding TranslationToggleLabel}"
+                    Command="{Binding ToggleTranslationCommand}"
+                    IsVisible="{Binding ShowTranslationToggle}" />
+
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+        </VerticalStackLayout>
+
+        <WebView Grid.Row="1" Source="{Binding HtmlSource}" />
     </Grid>
 </ContentPage>
-

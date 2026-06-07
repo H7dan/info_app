@@ -19,6 +19,7 @@ public sealed class HandbookCategoryViewModel : INotifyPropertyChanged
 {
 	private readonly IContentRepository _contentRepository;
 	private readonly ILanguageService _languageService;
+	private readonly IUiStringsService _strings;
 
 	private string _title = "Handbook";
 	private bool _isLoading;
@@ -64,16 +65,24 @@ public sealed class HandbookCategoryViewModel : INotifyPropertyChanged
 		}
 	}
 
-	public HandbookCategoryViewModel(IContentRepository contentRepository, ILanguageService languageService)
+	public string SearchPlaceholder => _strings.HandbookSearchPlaceholder;
+
+	public HandbookCategoryViewModel(
+		IContentRepository contentRepository,
+		ILanguageService languageService,
+		IUiStringsService strings)
 	{
 		_contentRepository = contentRepository;
 		_languageService = languageService;
+		_strings = strings;
 
 		_languageService.PropertyChanged += (_, e) =>
 		{
 			if (e.PropertyName == nameof(ILanguageService.CurrentLanguage))
 				_ = LoadAsync(_categoryId);
 		};
+
+		_strings.PropertyChanged += (_, _) => OnPropertyChanged(nameof(SearchPlaceholder));
 	}
 
 	public async Task LoadAsync(string? categoryId)
