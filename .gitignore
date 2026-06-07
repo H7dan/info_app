@@ -32,8 +32,9 @@ Desktop.ini
 # Local learning notes (keep on this machine)
 HimiMaui/_learning/
 
-# Cursor IDE config (local)
+# Cursor IDE — local rules and config (do not commit)
 .cursor/
+.cursor/rules/
 
 # Python
 __pycache__/
