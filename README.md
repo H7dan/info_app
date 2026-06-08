@@ -4,24 +4,7 @@
 
 > **Disclaimer:** Educational/demo project. Not legal advice.
 
-## Where is the code?
-
-Active development and the full project live on the **`dev`** branch:
-
-| Branch | Contents |
-|--------|----------|
-| [`dev`](https://github.com/H7dan/Himi/tree/dev) | .NET MAUI app (`HimiMaui/`), AI server (`ai-server/`), docs, tools |
-| `main` | Project overview (this file) |
-
-To work with the app, clone the repo and switch to `dev`:
-
-```bash
-git clone https://github.com/H7dan/Himi.git
-cd Himi
-git checkout dev
-```
-
-See the [README on `dev`](https://github.com/H7dan/Himi/blob/dev/README.md) for setup, architecture, and contribution guides.
+Active development lives on the [`dev`](https://github.com/H7dan/Himi/tree/dev) branch.
 
 ## Features
 
@@ -37,7 +20,3 @@ See the [README on `dev`](https://github.com/H7dan/Himi/blob/dev/README.md) for 
 - **Client:** .NET MAUI, C#, MVVM, XAML
 - **AI (optional):** FastAPI, Ollama, Docker Compose
 - **Storage:** Bundled content + on-device app data (news cache, chat history, checklist progress)
-
-## License
-
-MIT (see the `dev` branch for license details).
