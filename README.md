@@ -10,18 +10,18 @@ Active development and the full project live on the **`dev`** branch:
 
 | Branch | Contents |
 |--------|----------|
-| [`dev`](https://github.com/H7dan/info_app/tree/dev) | .NET MAUI app (`HimiMaui/`), AI server (`ai-server/`), docs, tools |
-| `main` | Project overview (this file); legacy Flutter scaffold in `gigi/` |
+| [`dev`](https://github.com/H7dan/Himi/tree/dev) | .NET MAUI app (`HimiMaui/`), AI server (`ai-server/`), docs, tools |
+| `main` | Project overview (this file) |
 
 To work with the app, clone the repo and switch to `dev`:
 
 ```bash
-git clone https://github.com/H7dan/info_app.git
-cd info_app
+git clone https://github.com/H7dan/Himi.git
+cd Himi
 git checkout dev
 ```
 
-See the [README on `dev`](https://github.com/H7dan/info_app/blob/dev/README.md) for setup, architecture, and contribution guides.
+See the [README on `dev`](https://github.com/H7dan/Himi/blob/dev/README.md) for setup, architecture, and contribution guides.
 
 ## Features
 
