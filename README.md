@@ -2,7 +2,6 @@
 
 **Himi** is an offline-first mobile app that helps immigrants in Poland find practical, everyday information: handbook articles, first-step checklists, emergency contacts, cached official news, and optional AI chat and translation.
 
-> **Disclaimer:** Educational/demo project. Not legal advice.
 
 Active development lives on the [`dev`](https://github.com/H7dan/Himi/tree/dev) branch.
 
